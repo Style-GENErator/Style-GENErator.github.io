@@ -1,0 +1,13 @@
+{
+  "participant": {
+    "pid": "P1",
+    "name": "Suhani Mundada",
+    "affiliation": "ArtCenter"
+  },
+  "condition": "baseline",
+  "prompt": "a high-top shoe inspired by biomimicry, flowy forms, and natural colors.",
+  "genes": [],
+  "originalUrl": "https://v3b.fal.media/files/b/0a93199b/XlyHcPQX8ng5xbhh8ZoKh_735c1f02b4af4e57a1a81cf8a2b0804c.jpg",
+  "savedAt": "2026-03-27T05:55:08.571Z",
+  "supabaseId": "13f2c1c9-1f81-4a7c-92e9-a4cb8fcbcbb3"
+}

@@ -1,0 +1,22 @@
+{
+  "participant": {
+    "pid": "P8",
+    "name": "Yuxuan Zhou",
+    "affiliation": "ArtCenter"
+  },
+  "condition": "generator",
+  "prompt": "handbag",
+  "genes": [
+    {
+      "name": "Art Deco",
+      "pct": 52.7
+    },
+    {
+      "name": "Gold Porcelain",
+      "pct": 47.3
+    }
+  ],
+  "originalUrl": "https://v3b.fal.media/files/b/0a927292/MfiepNz8y8RhEdDAt_6XB_5b400b1a4d5b4749b67569550e784879.jpg",
+  "savedAt": "2026-03-27T05:42:51.938Z",
+  "supabaseId": "45846b61-d517-41d3-a16f-0d4437408799"
+}

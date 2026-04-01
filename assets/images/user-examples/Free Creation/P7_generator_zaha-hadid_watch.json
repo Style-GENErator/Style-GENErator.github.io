@@ -1,0 +1,18 @@
+{
+  "participant": {
+    "pid": "P7",
+    "name": "Bensen Liu",
+    "affiliation": "ArtCenter"
+  },
+  "condition": "generator",
+  "prompt": "watch",
+  "genes": [
+    {
+      "name": "Zaha Hadid",
+      "pct": 100
+    }
+  ],
+  "originalUrl": "https://v3b.fal.media/files/b/0a927162/8INVIDXecd5awZcS2e5iZ_80ea5153b5234ee9b0504ce52e376a74.jpg",
+  "savedAt": "2026-03-27T05:43:06.824Z",
+  "supabaseId": "fdd23178-4b45-4828-9dc0-de36fe2c7635"
+}

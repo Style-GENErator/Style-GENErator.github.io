@@ -1,0 +1,22 @@
+{
+  "participant": {
+    "pid": "P2",
+    "name": "Amber Wang",
+    "affiliation": "ArtCenter"
+  },
+  "condition": "generator",
+  "prompt": "hand bag",
+  "genes": [
+    {
+      "name": "Matte Black Gold",
+      "pct": 50
+    },
+    {
+      "name": "Glitter",
+      "pct": 50
+    }
+  ],
+  "originalUrl": "https://v3b.fal.media/files/b/0a92db62/79pCnQuZIEZJo1DC2ggIz_ff8b97d9959849b1b2cd7245de4c5627.jpg",
+  "savedAt": "2026-03-27T05:38:36.953Z",
+  "supabaseId": "3da5c8f7-60fe-46d5-82b9-212fe9bf710a"
+}

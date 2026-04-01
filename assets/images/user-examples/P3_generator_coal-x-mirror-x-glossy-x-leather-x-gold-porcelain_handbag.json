@@ -1,0 +1,34 @@
+{
+  "participant": {
+    "pid": "P3",
+    "name": "Xinyuan Du",
+    "affiliation": "ArtCenter"
+  },
+  "condition": "generator",
+  "prompt": "handbag",
+  "genes": [
+    {
+      "name": "Coal",
+      "pct": 25
+    },
+    {
+      "name": "Mirror",
+      "pct": 25
+    },
+    {
+      "name": "Glossy",
+      "pct": 25
+    },
+    {
+      "name": "Leather",
+      "pct": 12.5
+    },
+    {
+      "name": "Gold Porcelain",
+      "pct": 12.5
+    }
+  ],
+  "originalUrl": "https://v3b.fal.media/files/b/0a9253ed/B2FI_WOM2ulMVftUQXjpx_85159a66d02a43c69d76afb0fb35e593.jpg",
+  "savedAt": "2026-03-27T05:49:40.760Z",
+  "supabaseId": "ac0c95ce-9fd9-43cd-aaef-b714a77277aa"
+}

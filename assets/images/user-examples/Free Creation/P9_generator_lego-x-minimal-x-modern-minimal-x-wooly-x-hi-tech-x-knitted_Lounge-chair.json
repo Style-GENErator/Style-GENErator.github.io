@@ -1,0 +1,38 @@
+{
+  "participant": {
+    "pid": "P9",
+    "name": "Yan Yu",
+    "affiliation": "ArtCenter"
+  },
+  "condition": "generator",
+  "prompt": "Lounge chair",
+  "genes": [
+    {
+      "name": "Lego",
+      "pct": 45.5
+    },
+    {
+      "name": "Minimal",
+      "pct": 11.4
+    },
+    {
+      "name": "Modern Minimal",
+      "pct": 11.4
+    },
+    {
+      "name": "Wooly",
+      "pct": 11.4
+    },
+    {
+      "name": "Hi-Tech",
+      "pct": 11.4
+    },
+    {
+      "name": "Knitted",
+      "pct": 9
+    }
+  ],
+  "originalUrl": "https://v3b.fal.media/files/b/0a929694/sLv2mZtHfW-Wci4F-5cYh_c64c0ec6b7a24206853b31b8fe03c4fa.jpg",
+  "savedAt": "2026-03-27T05:40:35.054Z",
+  "supabaseId": "d9e4e45e-c8e5-4055-a5dd-386c75d6da3f"
+}

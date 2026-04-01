@@ -1,0 +1,310 @@
+{
+  "luxurious": [
+    {
+      "name": "Luxury Gilded",
+      "score": 68
+    },
+    {
+      "name": "Plush",
+      "score": 58
+    },
+    {
+      "name": "Glossy",
+      "score": 50
+    },
+    {
+      "name": "Leather",
+      "score": 45
+    },
+    {
+      "name": "Satin",
+      "score": 44
+    }
+  ],
+  "dark and moody": [
+    {
+      "name": "Hard Shadows",
+      "score": 51
+    },
+    {
+      "name": "LiquidBlack",
+      "score": 51
+    },
+    {
+      "name": "Opalescent",
+      "score": 49
+    },
+    {
+      "name": "Monochrome",
+      "score": 48
+    },
+    {
+      "name": "Dark Fantasy",
+      "score": 46
+    }
+  ],
+  "futuristic": [
+    {
+      "name": "Sci-fi",
+      "score": 62
+    },
+    {
+      "name": "Cyberpunk",
+      "score": 59
+    },
+    {
+      "name": "Steampunk",
+      "score": 58
+    },
+    {
+      "name": "Hi-Tech",
+      "score": 55
+    },
+    {
+      "name": "Cyborg",
+      "score": 54
+    },
+    {
+      "name": "Hologram",
+      "score": 54
+    },
+    {
+      "name": "Avant-garde",
+      "score": 53
+    },
+    {
+      "name": "Vaporwave",
+      "score": 51
+    }
+  ],
+  "minimalist": [
+    {
+      "name": "Modern Minimal",
+      "score": 76
+    },
+    {
+      "name": "Minimal",
+      "score": 70
+    },
+    {
+      "name": "Brutalist",
+      "score": 57
+    },
+    {
+      "name": "Art Nouveau",
+      "score": 49
+    }
+  ],
+  "colorful and playful": [
+    {
+      "name": "Colorful Toy",
+      "score": 62
+    },
+    {
+      "name": "Opalescent",
+      "score": 45
+    },
+    {
+      "name": "Wooly",
+      "score": 44
+    },
+    {
+      "name": "Fluffy",
+      "score": 43
+    },
+    {
+      "name": "Play-doh",
+      "score": 43
+    },
+    {
+      "name": "Plush",
+      "score": 42
+    },
+    {
+      "name": "Glitter",
+      "score": 40
+    }
+  ],
+  "industrial": [
+    {
+      "name": "Industrial",
+      "score": 100
+    },
+    {
+      "name": "Hi-Tech",
+      "score": 52
+    },
+    {
+      "name": "Techwear",
+      "score": 45
+    },
+    {
+      "name": "Coal",
+      "score": 44
+    },
+    {
+      "name": "Rustic",
+      "score": 43
+    },
+    {
+      "name": "Sci-fi",
+      "score": 43
+    }
+  ],
+  "transparent and glassy": [
+    {
+      "name": "Glass",
+      "score": 69
+    },
+    {
+      "name": "Frosted Glass",
+      "score": 68
+    },
+    {
+      "name": "Opalescent",
+      "score": 59
+    },
+    {
+      "name": "Glossy",
+      "score": 56
+    },
+    {
+      "name": "Stained Glass",
+      "score": 53
+    },
+    {
+      "name": "Plastic",
+      "score": 49
+    }
+  ],
+  "shiny metallic": [
+    {
+      "name": "Matte Black Gold",
+      "score": 66
+    },
+    {
+      "name": "Glossy",
+      "score": 66
+    },
+    {
+      "name": "Chrome",
+      "score": 63
+    },
+    {
+      "name": "Opalescent",
+      "score": 60
+    },
+    {
+      "name": "Gold Porcelain",
+      "score": 57
+    },
+    {
+      "name": "Luxury Gilded",
+      "score": 57
+    },
+    {
+      "name": "Bronze",
+      "score": 52
+    },
+    {
+      "name": "Aluminum Foil",
+      "score": 51
+    }
+  ],
+  "cozy and warm": [
+    {
+      "name": "Plush",
+      "score": 56
+    },
+    {
+      "name": "Fluffy",
+      "score": 50
+    },
+    {
+      "name": "Wooly",
+      "score": 49
+    },
+    {
+      "name": "Posh",
+      "score": 43
+    },
+    {
+      "name": "Knitted",
+      "score": 43
+    },
+    {
+      "name": "Rustic",
+      "score": 40
+    }
+  ],
+  "vintage retro": [
+    {
+      "name": "Vintage",
+      "score": 83
+    },
+    {
+      "name": "Streetwear",
+      "score": 56
+    },
+    {
+      "name": "Steampunk",
+      "score": 55
+    },
+    {
+      "name": "Denim",
+      "score": 54
+    },
+    {
+      "name": "Rococo",
+      "score": 51
+    },
+    {
+      "name": "Rustic",
+      "score": 49
+    }
+  ],
+  "ethereal dreamy": [
+    {
+      "name": "Ethereal",
+      "score": 80
+    },
+    {
+      "name": "Opalescent",
+      "score": 52
+    },
+    {
+      "name": "Vaporwave",
+      "score": 45
+    },
+    {
+      "name": "Wooly",
+      "score": 44
+    },
+    {
+      "name": "Dark Fantasy",
+      "score": 43
+    },
+    {
+      "name": "Art Nouveau",
+      "score": 40
+    }
+  ],
+  "brutalist concrete": [
+    {
+      "name": "Brutalist",
+      "score": 72
+    },
+    {
+      "name": "Art Deco",
+      "score": 56
+    },
+    {
+      "name": "Marble",
+      "score": 44
+    },
+    {
+      "name": "Carbon Fiber",
+      "score": 43
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "participant": {
+    "pid": "P1",
+    "name": "Suhani Mundada",
+    "affiliation": "ArtCenter"
+  },
+  "condition": "generator",
+  "prompt": "metal purse",
+  "genes": [
+    {
+      "name": "Glass",
+      "pct": 40
+    },
+    {
+      "name": "Vaporwave",
+      "pct": 37
+    },
+    {
+      "name": "Michael Graves",
+      "pct": 21.9
+    },
+    {
+      "name": "Victor Horta",
+      "pct": 1.1
+    }
+  ],
+  "originalUrl": "https://v3b.fal.media/files/b/0a931954/kXuTiAZ9cUUI0JB_BAzCE_accdec46ac154025a87485b94e43fa08.jpg",
+  "savedAt": "2026-03-27T05:55:46.300Z",
+  "supabaseId": "f65c76fe-f39d-446b-9442-7a45549d643c"
+}

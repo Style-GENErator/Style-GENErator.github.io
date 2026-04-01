@@ -1,0 +1,18 @@
+{
+  "participant": {
+    "pid": "P5",
+    "name": "Zihao Zhuang",
+    "affiliation": "ArtCenter"
+  },
+  "condition": "generator",
+  "prompt": "cat food dispenser",
+  "genes": [
+    {
+      "name": "Bjarke Ingels",
+      "pct": 100
+    }
+  ],
+  "originalUrl": "https://v3b.fal.media/files/b/0a925c65/z2nqxxQpZvuz55LZ6miAG_48780321d55d436d904adff183dbea1f.jpg",
+  "savedAt": "2026-03-27T05:46:01.718Z",
+  "supabaseId": "072381e5-f1fa-4c31-b0da-d6638cdd4a7e"
+}

@@ -1,0 +1,34 @@
+{
+  "participant": {
+    "pid": "P11",
+    "name": "Almberg Seth",
+    "affiliation": "UI/UX"
+  },
+  "condition": "generator",
+  "prompt": "house",
+  "genes": [
+    {
+      "name": "Glass",
+      "pct": 61.8
+    },
+    {
+      "name": "Modern Dark Lights",
+      "pct": 13
+    },
+    {
+      "name": "Lava",
+      "pct": 11.4
+    },
+    {
+      "name": "Clay",
+      "pct": 8.1
+    },
+    {
+      "name": "Cyberpunk",
+      "pct": 5.7
+    }
+  ],
+  "originalUrl": "https://v3b.fal.media/files/b/0a92b536/O7ebwAHN9s4p37JMaazHN_5edef0b0174b4b829835a6a3cb65bceb.jpg",
+  "savedAt": "2026-03-27T05:38:46.720Z",
+  "supabaseId": "cfbede47-36d0-4cfe-9afb-e9f40bf97f01"
+}

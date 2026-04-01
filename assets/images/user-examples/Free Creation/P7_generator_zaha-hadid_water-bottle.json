@@ -1,0 +1,18 @@
+{
+  "participant": {
+    "pid": "P7",
+    "name": "Bensen Liu",
+    "affiliation": "ArtCenter"
+  },
+  "condition": "generator",
+  "prompt": "water bottle",
+  "genes": [
+    {
+      "name": "Zaha Hadid",
+      "pct": 100
+    }
+  ],
+  "originalUrl": "https://v3b.fal.media/files/b/0a927155/MlbUjIJYtuhK4h8UK4eja_37e6e6716887460289f526c74d1d8798.jpg",
+  "savedAt": "2026-03-27T05:44:13.885Z",
+  "supabaseId": "d8c3ed4c-fe8f-460b-ba34-1f99e23c59a9"
+}

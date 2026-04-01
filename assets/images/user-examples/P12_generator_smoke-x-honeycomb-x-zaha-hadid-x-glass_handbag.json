@@ -1,0 +1,30 @@
+{
+  "participant": {
+    "pid": "P12",
+    "name": "Charlene Chen",
+    "affiliation": "ArtCenter"
+  },
+  "condition": "generator",
+  "prompt": "handbag",
+  "genes": [
+    {
+      "name": "Smoke",
+      "pct": 50
+    },
+    {
+      "name": "Honeycomb",
+      "pct": 25
+    },
+    {
+      "name": "Zaha Hadid",
+      "pct": 18.8
+    },
+    {
+      "name": "Glass",
+      "pct": 6.3
+    }
+  ],
+  "originalUrl": "https://v3b.fal.media/files/b/0a92fc4e/Z3LftDVx-CC20WNF1VsHv_a59224c639354208980af49fa53709a7.jpg",
+  "savedAt": "2026-03-27T05:36:05.447Z",
+  "supabaseId": "bb1100e5-58ca-4ae2-bf75-23fd27507c4e"
+}

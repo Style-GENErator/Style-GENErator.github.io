@@ -1,0 +1,62 @@
+{
+  "target": "luxurious",
+  "generations": [
+    {
+      "chairs": [
+        {
+          "name": "Industrial",
+          "fitness": 11,
+          "mutation": null
+        },
+        {
+          "name": "Icy",
+          "fitness": 10,
+          "mutation": null
+        },
+        {
+          "name": "Bohemian",
+          "fitness": 14,
+          "mutation": null
+        }
+      ]
+    },
+    {
+      "chairs": [
+        {
+          "name": "Indusbrutal",
+          "fitness": 13,
+          "mutation": "+Brutalist 33%"
+        },
+        {
+          "name": "IndusGlam",
+          "fitness": 9,
+          "mutation": "+Posh 56%"
+        },
+        {
+          "name": "Glacialiscent",
+          "fitness": 7,
+          "mutation": "+Glossy 31%"
+        }
+      ]
+    },
+    {
+      "chairs": [
+        {
+          "name": "Indulgent Brutality",
+          "fitness": 16,
+          "mutation": "+Luxury Gilded 77%"
+        },
+        {
+          "name": "GlamTech",
+          "fitness": 12,
+          "mutation": "+Hi-Tech 54%"
+        },
+        {
+          "name": "Frostgem",
+          "fitness": 20,
+          "mutation": "+Diamond 69%"
+        }
+      ]
+    }
+  ]
+}

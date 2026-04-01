@@ -1,0 +1,54 @@
+{
+  "participant": {
+    "pid": "P12",
+    "name": "Charlene Chen",
+    "affiliation": "ArtCenter"
+  },
+  "condition": "generator",
+  "prompt": "chair",
+  "genes": [
+    {
+      "name": "Zaha Hadid",
+      "pct": 50
+    },
+    {
+      "name": "Glass",
+      "pct": 25
+    },
+    {
+      "name": "Opalescent",
+      "pct": 12.5
+    },
+    {
+      "name": "Stained Glass",
+      "pct": 6.3
+    },
+    {
+      "name": "LiquidBlack",
+      "pct": 3.1
+    },
+    {
+      "name": "Dark Fantasy",
+      "pct": 1.6
+    },
+    {
+      "name": "Brutalist",
+      "pct": 0.8
+    },
+    {
+      "name": "Hard Shadows",
+      "pct": 0.4
+    },
+    {
+      "name": "Industrial",
+      "pct": 0.2
+    },
+    {
+      "name": "Grunge",
+      "pct": 0.2
+    }
+  ],
+  "originalUrl": "https://v3b.fal.media/files/b/0a92fd38/vfI0VxBP23EqdtGBncB8t_5f9e4c3ef310427b841d0c0c31a6b64e.jpg",
+  "savedAt": "2026-03-27T05:35:10.263Z",
+  "supabaseId": "7277de71-197a-4d60-a7d0-13e913918dcf"
+}

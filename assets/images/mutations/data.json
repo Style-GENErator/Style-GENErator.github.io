@@ -1,0 +1,38 @@
+[
+  {
+    "product": "lamp",
+    "source": "Knitted",
+    "complement": "Wooly",
+    "contrast": "Glass"
+  },
+  {
+    "product": "chair",
+    "source": "Cotton Candy",
+    "complement": "Play-doh",
+    "contrast": "Brutalist"
+  },
+  {
+    "product": "table",
+    "source": "Geode",
+    "complement": "Marble",
+    "contrast": "Hi-Tech"
+  },
+  {
+    "product": "car",
+    "source": "Armor",
+    "complement": "Mecha",
+    "contrast": "Norman Foster"
+  },
+  {
+    "product": "helmet",
+    "source": "Space Age",
+    "complement": "Sci-fi",
+    "contrast": "Rustic"
+  },
+  {
+    "product": "watch",
+    "source": "Gold",
+    "complement": "Posh",
+    "contrast": "Toy"
+  }
+]

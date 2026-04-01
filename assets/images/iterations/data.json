@@ -1,0 +1,32 @@
+[
+  {
+    "iteration": 1,
+    "genes": "+ Plastic\n+ Plush",
+    "image": "assets/images/iterations/iter_1.jpg"
+  },
+  {
+    "iteration": 2,
+    "genes": "+ Crystals",
+    "image": "assets/images/iterations/iter_2.jpg"
+  },
+  {
+    "iteration": 3,
+    "genes": "+ Geode",
+    "image": "assets/images/iterations/iter_3.jpg"
+  },
+  {
+    "iteration": 4,
+    "genes": "+ Diamond",
+    "image": "assets/images/iterations/iter_4.jpg"
+  },
+  {
+    "iteration": 5,
+    "genes": "+ Felipe Pantone\n\u2212 Diamond",
+    "image": "assets/images/iterations/iter_5.jpg"
+  },
+  {
+    "iteration": 6,
+    "genes": "+ Modern Minimal\n\u2212 Felipe Pantone",
+    "image": "assets/images/iterations/iter_6.jpg"
+  }
+]

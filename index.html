@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GENErator: Supporting Design Style Exploration with Generative AI through Genetic Mixing</title>
+  <meta name="description" content="GENErator treats each visual style as a gene in a navigable semantic space, enabling genetic operations for guided style exploration.">
+  <meta property="og:title" content="GENErator: Design Style Exploration through Genetic Mixing">
+  <meta property="og:description" content="A proof-of-concept tool that treats each visual style as a gene in a navigable semantic style space.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      color: #1a1a1a;
+      background: #ffffff;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header */
+    .header {
+      padding: 48px 0 16px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 24px;
+      letter-spacing: -0.5px;
+    }
+
+    .links {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    .links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 20px;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      color: #333;
+      transition: all 0.2s;
+    }
+
+    .links a:hover {
+      border-color: #333;
+      background: #fafafa;
+    }
+
+    /* Teaser */
+    .teaser {
+      margin-bottom: 48px;
+    }
+
+    .teaser img {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid #eee;
+    }
+
+    .teaser .caption {
+      font-size: 13px;
+      color: #888;
+      margin-top: 12px;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    /* Sections */
+    .section {
+      margin-bottom: 48px;
+    }
+
+    h2 {
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      letter-spacing: -0.3px;
+    }
+
+    h3 {
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    p {
+      font-size: 15px;
+      color: #444;
+      margin-bottom: 16px;
+      text-align: justify;
+    }
+
+    /* Video */
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      margin-bottom: 48px;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #f5f5f5;
+      border: 1px solid #eee;
+    }
+
+    .video-container iframe,
+    .video-container video {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: none;
+      border-radius: 12px;
+    }
+
+    /* Operations Demo Carousel */
+    .opd-carousel {
+      position: relative;
+      min-height: 220px;
+    }
+
+    .opd-slide {
+      display: none;
+      animation: opdFadeIn 0.4s ease;
+    }
+
+    .opd-slide.active { display: block; }
+
+    @keyframes opdFadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .opd-content {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      padding: 20px;
+      border-radius: 14px;
+      background: #1a1a1a;
+      min-height: 200px;
+    }
+
+    .opd-viz {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .opd-info {
+      flex: 0 0 260px;
+    }
+
+    .opd-info h3 {
+      font-size: 18px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .opd-info p {
+      font-size: 13px;
+      color: #999;
+      margin-bottom: 0;
+      line-height: 1.6;
+    }
+
+    /* Gene thumbnail in dark context */
+    .opd-gene {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .opd-gene img {
+      width: 72px;
+      height: 72px;
+      border-radius: 10px;
+      border: 2px solid rgba(255,255,255,0.15);
+      object-fit: cover;
+    }
+
+    .opd-gene span {
+      font-size: 11px;
+      color: #aaa;
+      white-space: nowrap;
+    }
+
+    /* Crossover viz */
+    .opd-crossover-viz {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .opd-crossover-viz > div:first-child {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .opd-cross-symbol {
+      font-size: 20px;
+      color: #666;
+      font-weight: 300;
+    }
+
+    .opd-cross-arrow {
+      color: #666;
+    }
+
+    .opd-gene-result img {
+      border-color: rgba(255,255,255,0.3);
+    }
+
+    /* Mutation viz (complement / contrast) */
+    .opd-mutation-viz {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .opd-mut-arrow {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      width: 80px;
+    }
+
+    .opd-mut-arrow-line {
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(to right, #4A90D9, transparent);
+      border-radius: 1px;
+    }
+
+    .opd-mut-arrow-label {
+      font-size: 9px;
+      font-weight: 500;
+    }
+
+    /* Evolution mini viz */
+    .opd-evo-viz {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .opd-evo-target-input {
+      font-size: 12px;
+      color: #888;
+      margin-bottom: 4px;
+    }
+
+    .opd-evo-input-text {
+      color: #ccc;
+      font-style: italic;
+    }
+
+    .opd-evo-gens {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .opd-evo-gen {
+      display: flex;
+      gap: 6px;
+    }
+
+    .opd-evo-gen img {
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      border: 2px solid rgba(255,255,255,0.1);
+      object-fit: cover;
+    }
+
+    .opd-evo-winner {
+      border-color: #F5A623 !important;
+    }
+
+    .opd-evo-arrow-down {
+      color: #9c27b0;
+    }
+
+    /* Tree mini viz */
+    .opd-tree-viz {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .opd-tree-node img {
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      border: 2px solid rgba(255,255,255,0.15);
+      object-fit: cover;
+    }
+
+    .opd-tree-branches {
+      display: flex;
+      gap: 20px;
+    }
+
+    .opd-tree-branch {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .opd-tree-edge {
+      font-size: 9px;
+      font-weight: 600;
+    }
+
+    /* Dots */
+    .opd-dots {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 14px;
+    }
+
+    .opd-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      border: none;
+      background: #ddd;
+      cursor: pointer;
+      padding: 0;
+      transition: all 0.15s;
+    }
+
+    .opd-dot.active {
+      background: #333;
+      width: 20px;
+      border-radius: 4px;
+    }
+
+    /* Crossover */
+    .xover-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .xover-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .xover-parents {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .xover-gene {
+      text-align: center;
+    }
+
+    .xover-gene img {
+      width: 64px;
+      height: 64px;
+      border-radius: 8px;
+      object-fit: cover;
+      border: 1px solid #eee;
+    }
+
+    .xover-gene span {
+      display: block;
+      font-size: 11px;
+      color: #666;
+      margin-top: 4px;
+    }
+
+    .xover-symbol {
+      font-size: 18px;
+      color: #999;
+      font-weight: 300;
+      margin-top: -16px;
+    }
+
+    .xover-arrow {
+      opacity: 0.5;
+    }
+
+    .xover-result img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 1px solid #eee;
+    }
+
+    /* Gallery */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .gallery-item {
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid #eee;
+      background: #fafafa;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      display: block;
+    }
+
+    .gallery-caption {
+      padding: 10px 12px;
+      font-size: 13px;
+      color: #333;
+      font-weight: 600;
+      border-top: 1px solid #f0f0f0;
+      text-align: left;
+    }
+
+    .gallery-caption .gallery-prompt {
+      color: #999;
+      font-weight: 400;
+      margin-left: 2px;
+    }
+
+    .gallery-genes {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.75);
+      display: flex;
+      flex-wrap: wrap;
+      align-content: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 16px;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .gallery-item:hover .gallery-genes {
+      opacity: 1;
+    }
+
+    .gene-pill {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 20px;
+      padding: 4px 10px;
+      font-size: 11px;
+      color: #fff;
+      white-space: nowrap;
+    }
+
+
+    .gallery-subheading {
+      font-size: 15px;
+      font-weight: 600;
+      color: #666;
+      margin-bottom: 12px;
+      margin-top: 24px;
+    }
+
+    .gallery-subheading:first-child {
+      margin-top: 0;
+    }
+
+    /* Figure */
+    .figure {
+      margin-bottom: 32px;
+    }
+
+    .figure img {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid #eee;
+    }
+
+    .figure .caption {
+      font-size: 13px;
+      color: #888;
+      margin-top: 10px;
+      line-height: 1.6;
+    }
+
+    /* Mutation Explorer */
+    .mut-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .mut-header-label {
+      font-size: 13px;
+      font-weight: 500;
+      transition: opacity 0.15s, font-weight 0.15s;
+    }
+
+    .mut-header-complement { color: #4A90D9; flex: 1; text-align: left; }
+    .mut-header-source { color: #999; flex: 0 0 auto; }
+    .mut-header-contrast { color: #F5A623; flex: 1; text-align: right; }
+
+    .mut-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 10px;
+    }
+
+    .mut-card {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mut-image-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 520 / 390;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid #eee;
+      background: #f5f5f5;
+    }
+
+    .mut-img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.6s ease;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .mut-img-source { opacity: 1; }
+
+    /* Ensure images stack properly for crossfade — no white flash */
+    .mut-img-complement { z-index: 2; }
+    .mut-img-contrast { z-index: 2; }
+    .mut-img-source { z-index: 1; }
+
+    .mut-gene-label {
+      font-size: 11px;
+      font-weight: 600;
+      text-align: center;
+      color: #555;
+      margin-top: 6px;
+      white-space: nowrap;
+    }
+
+    .mut-name-source { color: #999; }
+    .mut-name-complement { color: #4A90D9; font-weight: 700; }
+    .mut-name-contrast { color: #F5A623; font-weight: 700; }
+
+    /* Spectrum: header + slider as one unit */
+    .mut-spectrum {
+      margin-top: 16px;
+      padding: 10px 16px 14px;
+      border-radius: 10px;
+      background: linear-gradient(to right, rgba(74,144,217,0.06), rgba(240,240,240,0.3) 35%, rgba(240,240,240,0.3) 65%, rgba(245,166,35,0.06));
+      border: 1px solid #f0f0f0;
+    }
+
+    .mut-global-track {
+      position: relative;
+      height: 32px;
+    }
+
+    .mut-global-track::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0; right: 0;
+      height: 4px;
+      background: #e8e8e8;
+      border-radius: 2px;
+      transform: translateY(-50%);
+    }
+
+    .mut-global-fill {
+      position: absolute;
+      top: 50%;
+      height: 4px;
+      border-radius: 2px;
+      transform: translateY(-50%);
+      width: 0;
+      transition: width 0.4s ease;
+    }
+
+    .mut-global-fill-left { background: #4A90D9; }
+    .mut-global-fill-right { background: #F5A623; }
+
+    .mut-global-handle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 20px;
+      height: 20px;
+      background: white;
+      border: 2px solid #999;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      pointer-events: none;
+      transition: left 0.4s ease;
+    }
+
+    /* Evolution Explorer */
+    .evo-canvas {
+      position: relative;
+      padding: 0;
+    }
+
+    .evo-target-centered {
+      text-align: center;
+      font-size: 14px;
+      color: #888;
+      margin-bottom: 16px;
+    }
+
+    .evo-target-centered em {
+      color: #333;
+      font-weight: 600;
+    }
+
+    .evo-lines {
+      position: absolute;
+      top: 0; left: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .evo-rows {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .evo-row {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .evo-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 150px;
+    }
+
+    .evo-mut-label {
+      font-size: 10px;
+      font-weight: 600;
+      color: #9c27b0;
+      margin-bottom: 4px;
+      white-space: nowrap;
+    }
+
+    .evo-card-img {
+      width: 110px;
+      height: 110px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: none;
+      background: transparent;
+    }
+
+    .evo-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .evo-card-img-winner {
+      /* winner styling already baked into the screenshot */
+    }
+
+    .evo-card-name {
+      font-size: 11px;
+      color: #555;
+      margin-top: 6px;
+      text-align: center;
+      font-style: italic;
+      white-space: nowrap;
+    }
+
+    .evo-card-fitness {
+      width: 80px;
+      height: 3px;
+      background: #eee;
+      border-radius: 2px;
+      margin-top: 4px;
+      overflow: hidden;
+    }
+
+    .evo-card-fitness-fill {
+      height: 100%;
+      background: linear-gradient(to right, #9c27b0, #ce93d8);
+      border-radius: 2px;
+      width: 0;
+    }
+
+    .evo-card-score {
+      font-size: 10px;
+      font-weight: 700;
+      color: #aaa;
+      margin-top: 2px;
+    }
+
+    /* Semantic Search */
+    .ss-input-wrap {
+      position: relative;
+      margin-bottom: 12px;
+    }
+
+    .ss-search-icon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #999;
+    }
+
+    .ss-input {
+      width: 100%;
+      padding: 12px 16px 12px 40px;
+      border: 1px solid #e0e0e0;
+      border-radius: 10px;
+      font-size: 15px;
+      font-family: 'Inter', sans-serif;
+      background: #fafafa;
+      color: #333;
+      outline: none;
+      cursor: default;
+    }
+
+    .ss-input:focus { border-color: #bbb; }
+    .ss-input.typing { color: #333; }
+    .ss-cursor {
+      display: none;
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 2px;
+      height: 18px;
+      background: #333;
+      animation: blink 0.8s step-end infinite;
+    }
+    .ss-input.typing ~ .ss-cursor { display: block; }
+    @keyframes blink { 50% { opacity: 0; } }
+
+    .ss-suggestions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+
+    .ss-pill {
+      padding: 5px 14px;
+      border-radius: 20px;
+      border: 1px solid #e0e0e0;
+      background: white;
+      font-size: 13px;
+      font-family: 'Inter', sans-serif;
+      color: #555;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .ss-pill:hover { border-color: #999; color: #333; }
+    .ss-pill.active { background: #333; color: white; border-color: #333; }
+
+    .ss-results {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 10px;
+      min-height: 340px;
+      align-content: start;
+    }
+
+    .ss-result-card {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid #eee;
+      background: #fafafa;
+      animation: ssCardIn 0.3s ease both;
+    }
+
+    @keyframes ssCardIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .ss-result-img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      display: block;
+    }
+
+    .ss-no-img {
+      background: #eee;
+    }
+
+    .ss-result-score {
+      position: absolute;
+      top: 6px;
+      left: 6px;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-size: 11px;
+      font-weight: 700;
+      color: white;
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(4px);
+    }
+
+    .ss-result-name {
+      padding: 6px 8px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #555;
+      text-align: center;
+    }
+
+    .ss-no-results {
+      grid-column: 1 / -1;
+      text-align: center;
+      color: #999;
+      padding: 24px;
+      font-size: 14px;
+    }
+
+    /* Iteration Explorer */
+    .iter-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .iter-changes {
+      display: flex;
+      gap: 6px;
+      justify-content: center;
+      min-height: 28px;
+    }
+
+    .iter-pill {
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .iter-add {
+      background: rgba(102,187,106,0.12);
+      color: #2e7d32;
+      border: 1px solid rgba(102,187,106,0.3);
+    }
+
+    .iter-rm {
+      background: rgba(239,83,80,0.1);
+      color: #c62828;
+      border: 1px solid rgba(239,83,80,0.25);
+    }
+
+    .iter-image-wrap {
+      width: 240px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #eee;
+      background: #f8f8f8;
+    }
+
+    .iter-image {
+      width: 100%;
+      display: block;
+    }
+
+    .iter-pips {
+      display: flex;
+      gap: 6px;
+      justify-content: center;
+    }
+
+    .iter-pip {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      border: none;
+      background: #ddd;
+      cursor: pointer;
+      transition: all 0.15s;
+      padding: 0;
+    }
+
+    .iter-pip:hover { background: #aaa; }
+    .iter-pip.active { background: #333; width: 20px; border-radius: 4px; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      h1 { font-size: 24px; }
+      .opd-content { flex-direction: column; }
+      .opd-info { flex: none; text-align: center; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .xover-grid { grid-template-columns: repeat(2, 1fr); }
+      .mut-grid { grid-template-columns: repeat(3, 1fr); }
+      .mut-header { font-size: 11px; }
+      .gallery-genes {
+        opacity: 1;
+        position: static;
+        background: #f5f5f5;
+        padding: 8px;
+        gap: 4px;
+      }
+      .gallery-genes .gene-pill {
+        color: #333;
+        background: rgba(0,0,0,0.06);
+        border-color: rgba(0,0,0,0.1);
+        font-size: 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .operations { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Header -->
+    <div class="header">
+      <h1>GENErator: Supporting Design Style Exploration with Generative AI through Genetic Mixing</h1>
+    </div>
+
+    <!-- Teaser -->
+    <div class="teaser">
+      <img src="assets/images/teaser.jpg" alt="The GENErator interface showing a gene library, infinite canvas with evolution tree, genetic operations menu, and composition tooltip.">
+      <p class="caption">The GENErator interface. (a) The designer can browse and semantically search for style genes in the gene library. (b) Genes can be dragged onto the canvas and mixed by dragging one over another. For example, crossing Cotton Candy and Glow produces the offspring Glowton Fluff. (c) Right-clicking a gene opens a context menu of available genetic operations. Complement mutation adds Opalescent (nearby aesthetic) and contrast mutation adds Geode (distant aesthetic). (d) The designer can adjust the weight contribution of each parent, also visualized as branch thickness in the evolution tree. (e) Hovering over a hybrid gene reveals its genetic composition.</p>
+    </div>
+
+    <!-- Abstract -->
+    <div class="section">
+      <h2>Abstract</h2>
+      <p>Generative AI models can now be fine-tuned into thousands of distinct visual styles, creating large design spaces for product designers to explore. However, current tools offer little support for navigating and combining these styles: designers resort to keyword search and opaque weight sliders, often fixating on familiar styles rather than exploring the diverse combinatorial space. To address these challenges, we developed GENErator, a proof-of-concept tool that treats each style as a "gene" in a navigable semantic style space, enabling genetic operations (crossover, mutation, and natural selection) for guided style exploration. In a within-subjects study comparing GENErator to a standard multi-style slider-based interface, we found that GENErator enabled significantly more diverse style exploration, improved designers' ability to navigate the style space, and supported a shift in interaction from linear trial-and-error toward structured branching where exploration is additive and traceable.</p>
+    </div>
+
+    <!-- Video -->
+    <div class="section">
+      <h2>Video</h2>
+      <div class="video-container">
+        <video controls preload="metadata">
+          <source src="assets/video/GENErator-demo.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <!-- 1. Semantic Style Space — the foundation -->
+    <div class="section">
+      <h2>Semantic Style Space</h2>
+      <p>GENErator organizes 100 style genes in a semantic embedding space where visually similar styles are positioned nearby. Below is the gene library projected with PCA. Colors indicate style categories. Scroll to zoom, drag to pan, and hover for previews.</p>
+      <div id="style-space-container" style="width:100%; aspect-ratio:1/1; border-radius:12px; border:1px solid #eee; background:#fafafa; position:relative; overflow:hidden;"></div>
+      <div id="style-space-legend" style="display:flex; gap:16px; flex-wrap:wrap; justify-content:center; margin-top:12px;"></div>
+      <div id="gene-tooltip" style="display:none; position:fixed; pointer-events:none; background:white; border-radius:10px; box-shadow:0 4px 20px rgba(0,0,0,0.15); z-index:100; overflow:hidden;">
+        <img id="tooltip-img" style="width:140px; height:140px; object-fit:cover; display:block;">
+        <div id="tooltip-name" style="font-size:12px; font-weight:600; text-align:center; padding:6px 8px; color:#333;"></div>
+      </div>
+    </div>
+
+    <!-- 2. Semantic Search — how you find genes -->
+    <div class="section">
+      <h2>Semantic Search</h2>
+      <p>Rather than browsing by name, designers can describe a desired aesthetic in natural language. The system ranks all 100 genes by semantic similarity to the query — for example, searching "luxurious" surfaces Luxury Gilded, Plush, and Glossy.</p>
+      <div id="semantic-search-demo"></div>
+    </div>
+
+    <!-- 3. Crossover -->
+    <div class="section">
+      <h2>Crossover</h2>
+      <p>The core operation in GENErator is crossover: two parent style genes are blended into a hybrid offspring at an adjustable ratio. Designers drag one gene onto another on the canvas to produce a new style that inherits characteristics from both parents.</p>
+      <div id="crossover-demo"></div>
+    </div>
+
+    <!-- 4. Complement vs. Contrast — mutation in action -->
+    <div class="section">
+      <h2>Mutation: Complement vs. Contrast</h2>
+      <p>GENErator supports two forms of mutation. Complement mutation refines a style by introducing a semantically nearby gene, staying within the same aesthetic family. Contrast mutation introduces a semantically distant gene, pushing the design in a maximally different direction. Below, six products are shown in their source style, then with a complement mutation applied, then with a contrast mutation — watch how each product transforms.</p>
+      <div id="mutation-explorer"></div>
+    </div>
+
+    <!-- 5. Natural Selection — evolution in action -->
+    <div class="section">
+      <h2>Natural Selection</h2>
+      <p>Designers describe a target aesthetic in natural language (e.g., "luxurious"), and the system automatically evolves a population of style genes toward it. In each generation, candidates are scored by cosine similarity to the target in CLIP embedding space (shown as a fitness percentage). The fittest survive and breed new candidates from semantically related genes, progressively converging on the desired aesthetic.</p>
+      <div id="evolution-explorer"></div>
+    </div>
+
+    <!-- 6. Iterative Style Evolution — full user workflow -->
+    <div class="section">
+      <h2>Iterative Style Evolution</h2>
+      <p>GENErator's evolution tree supports iterative refinement: each crossover or mutation builds on the previous offspring rather than starting from scratch. Below is one example trajectory from the user study, where a participant evolves a handbag design across six iterations — progressively adding, removing, and layering style genes. The gene pills show what changed at each step (green = added, red = removed).</p>
+      <div id="iteration-explorer"></div>
+    </div>
+
+    <!-- 7. Participant Designs -->
+    <div class="section">
+      <h2>Participant Designs</h2>
+      <p>Designs created by study participants through crossover and mutation of style genes. Hover over any image to see which genes were combined. In the main tasks, participants designed handbags and sneakers. In the free creation task, they chose their own product categories.</p>
+
+      <div class="gallery-subheading">Handbags</div>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="assets/images/user-examples/P12_generator_smoke-x-honeycomb-x-zaha-hadid-x-glass_handbag.jpg" alt="Handbag — Smoke x Honeycomb x Zaha Hadid x Glass">
+          <div class="gallery-genes">
+            <span class="gene-pill">Smoke</span>
+            <span class="gene-pill">Honeycomb</span>
+            <span class="gene-pill">Zaha Hadid</span>
+            <span class="gene-pill">Glass</span>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/user-examples/P8_generator_art-deco-x-gold-porcelain_handbag.jpg" alt="Handbag — Art Deco x Gold Porcelain">
+          <div class="gallery-genes">
+            <span class="gene-pill">Art Deco</span>
+            <span class="gene-pill">Gold Porcelain</span>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/user-examples/P2_generator_matte-black-gold-x-glitter_hand-bag.jpg" alt="Handbag — Matte Black Gold x Glitter">
+          <div class="gallery-genes">
+            <span class="gene-pill">Matte Black Gold</span>
+            <span class="gene-pill">Glitter</span>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/user-examples/P12_generator_zaha-hadid-x-ethereal_handbag.jpg" alt="Handbag — Zaha Hadid x Ethereal">
+          <div class="gallery-genes">
+            <span class="gene-pill">Zaha Hadid</span>
+            <span class="gene-pill">Ethereal</span>
+            <span class="gene-pill">Glow</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-subheading">Sneakers</div>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="assets/images/user-examples/good_F3_generator_knitted-x-chrome-x-mecha_sneaker.jpg" alt="Sneaker — Knitted x Chrome x Mecha">
+          <div class="gallery-genes">
+            <span class="gene-pill">Knitted</span>
+            <span class="gene-pill">Chrome</span>
+            <span class="gene-pill">Mecha</span>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/user-examples/Z6_generator_blue-white-porcelain-x-graffiti_sneaker.jpg" alt="Sneaker — Blue White Porcelain x Graffiti">
+          <div class="gallery-genes">
+            <span class="gene-pill">Blue White Porcelain</span>
+            <span class="gene-pill">Graffiti</span>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/user-examples/P1_baseline__a-high-top-shoe-inspired-by-bi.jpg" alt="High-Top Shoe — Organic x Clay x Minimal">
+          <div class="gallery-genes">
+            <span class="gene-pill">Organic</span>
+            <span class="gene-pill">Clay</span>
+            <span class="gene-pill">Minimal</span>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/user-examples/P10_generator_modern-led-lights-x-cyberpunk-x-hi-tech_sneaker.jpg" alt="Sneaker — Modern LED Lights x Cyberpunk x Hi-Tech">
+          <div class="gallery-genes">
+            <span class="gene-pill">Modern LED Lights</span>
+            <span class="gene-pill">Cyberpunk</span>
+            <span class="gene-pill">Hi-Tech</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-subheading">Free Creation</div>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="assets/images/user-examples/Free Creation/good_Y19_generator_stained-glass-x-carbon-fiber_bicycle.jpg" alt="Bicycle — Stained Glass x Carbon Fiber">
+          <div class="gallery-genes">
+            <span class="gene-pill">Stained Glass</span>
+            <span class="gene-pill">Carbon Fiber</span>
+          </div>
+          <div class="gallery-caption">Bicycle</div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/user-examples/Free Creation/P11_generator_glass-x-modern-dark-lights-x-lava-x-clay-x-cyberpunk_house.jpg" alt="House — Glass x Modern Dark Lights x Lava x Clay x Cyberpunk">
+          <div class="gallery-genes">
+            <span class="gene-pill">Glass</span>
+            <span class="gene-pill">Modern Dark Lights</span>
+            <span class="gene-pill">Lava</span>
+            <span class="gene-pill">Clay</span>
+            <span class="gene-pill">Cyberpunk</span>
+          </div>
+          <div class="gallery-caption">House</div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/user-examples/Free Creation/P5_generator_bjarke-ingels_cat-food-dispenser.jpg" alt="Cat Food Dispenser — Bjarke Ingels">
+          <div class="gallery-genes">
+            <span class="gene-pill">Bjarke Ingels</span>
+            <span class="gene-pill">Zen</span>
+            <span class="gene-pill">Minimal</span>
+          </div>
+          <div class="gallery-caption">Cat Food Dispenser</div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/user-examples/Free Creation/P7_generator_zaha-hadid_watch.jpg" alt="Watch — Zaha Hadid">
+          <div class="gallery-genes">
+            <span class="gene-pill">Zaha Hadid</span>
+            <span class="gene-pill">Mirror</span>
+          </div>
+          <div class="gallery-caption">Watch</div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/user-examples/Free Creation/P9_generator_lego-x-minimal-x-modern-minimal-x-wooly-x-hi-tech-x-knitted_Lounge-chair.jpg" alt="Lounge Chair — Lego x Minimal x Modern Minimal x Wooly x Hi-Tech x Knitted">
+          <div class="gallery-genes">
+            <span class="gene-pill">Lego</span>
+            <span class="gene-pill">Minimal</span>
+            <span class="gene-pill">Modern Minimal</span>
+            <span class="gene-pill">Wooly</span>
+            <span class="gene-pill">Hi-Tech</span>
+            <span class="gene-pill">Knitted</span>
+          </div>
+          <div class="gallery-caption">Lounge Chair</div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/user-examples/Free Creation/P7_generator_zaha-hadid_water-bottle.jpg" alt="Water Bottle — Zaha Hadid">
+          <div class="gallery-genes">
+            <span class="gene-pill">Zaha Hadid</span>
+            <span class="gene-pill">Marble</span>
+            <span class="gene-pill">Space Age</span>
+          </div>
+          <div class="gallery-caption">Water Bottle</div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/user-examples/Free Creation/good_M36_generator_geode-x-glass-x-modern-led-lights_pendant-light.jpg" alt="Pendant Light — Geode x Glass x Modern LED Lights">
+          <div class="gallery-genes">
+            <span class="gene-pill">Geode</span>
+            <span class="gene-pill">Glass</span>
+            <span class="gene-pill">Modern LED Lights</span>
+          </div>
+          <div class="gallery-caption">Pendant Light</div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/user-examples/Free Creation/P12_generator_bjarke-ingels-x-steven-holl-x-stained-glass-x-space-age_chair.jpg" alt="Chair — Bjarke Ingels x Steven Holl x Stained Glass x Space Age">
+          <div class="gallery-genes">
+            <span class="gene-pill">Bjarke Ingels</span>
+            <span class="gene-pill">Steven Holl</span>
+            <span class="gene-pill">Stained Glass</span>
+            <span class="gene-pill">Space Age</span>
+          </div>
+          <div class="gallery-caption">Chair</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="assets/style-space.js"></script>
+  <script src="assets/crossover-demo.js"></script>
+  <script src="assets/operations-demo.js"></script>
+  <script src="assets/mutation-explorer.js"></script>
+  <script src="assets/iteration-explorer.js"></script>
+  <script src="assets/semantic-search.js"></script>
+  <script src="assets/evolution-explorer.js"></script>
+</body>
+</html>

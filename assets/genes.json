@@ -1,0 +1,702 @@
+[
+  {
+    "name": "Glass",
+    "x": 0.1099,
+    "y": 0.2555,
+    "category": "Material",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/glass.webp"
+  },
+  {
+    "name": "Aluminum Foil",
+    "x": 0.0665,
+    "y": 0.2051,
+    "category": "Material",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/aluminum_foil_v2.webp"
+  },
+  {
+    "name": "Wooden",
+    "x": 0.0708,
+    "y": -0.3084,
+    "category": "Material",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/wooden.webp"
+  },
+  {
+    "name": "Chrome",
+    "x": -0.0078,
+    "y": 0.1441,
+    "category": "Material",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/chrome.webp"
+  },
+  {
+    "name": "Bamboo",
+    "x": 0.0148,
+    "y": -0.256,
+    "category": "Material",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/bamboo.webp"
+  },
+  {
+    "name": "Leather",
+    "x": 0.0555,
+    "y": -0.205,
+    "category": "Material",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/leather.webp"
+  },
+  {
+    "name": "Luxury Gilded",
+    "x": 0.003,
+    "y": 0.0405,
+    "category": "Architecture",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/luxury_gilded.webp"
+  },
+  {
+    "name": "Denim",
+    "x": 0.113,
+    "y": -0.1858,
+    "category": "Texture",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/denim.webp"
+  },
+  {
+    "name": "Gold Porcelain",
+    "x": 0.1836,
+    "y": -0.099,
+    "category": "Material",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/gold_porcelain.webp"
+  },
+  {
+    "name": "Satin",
+    "x": 0.1679,
+    "y": 0.008,
+    "category": "Material",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/satin.webp"
+  },
+  {
+    "name": "Bronze",
+    "x": 0.132,
+    "y": -0.1176,
+    "category": "Material",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/bronze.webp"
+  },
+  {
+    "name": "Marble",
+    "x": 0.1151,
+    "y": 0.001,
+    "category": "Material",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/marble.webp"
+  },
+  {
+    "name": "Plastic",
+    "x": 0.0862,
+    "y": -0.1112,
+    "category": "Material",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/plastic.webp"
+  },
+  {
+    "name": "Polymer",
+    "x": 0.1351,
+    "y": -0.0286,
+    "category": "Material",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/polymer.webp"
+  },
+  {
+    "name": "Carbon Fiber",
+    "x": 0.06,
+    "y": -0.0963,
+    "category": "Material",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/carbon_fiber.webp"
+  },
+  {
+    "name": "Matte Black Gold",
+    "x": 0.0478,
+    "y": -0.0433,
+    "category": "Material",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/matte_black_gold.webp"
+  },
+  {
+    "name": "Reptile Scales",
+    "x": 0.1096,
+    "y": -0.0937,
+    "category": "Material",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/reptile_scales.webp"
+  },
+  {
+    "name": "Copper Wire",
+    "x": 0.0581,
+    "y": -0.076,
+    "category": "Material",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/copper_wire.webp"
+  },
+  {
+    "name": "Upcycling Fashion",
+    "x": -0.0462,
+    "y": -0.0156,
+    "category": "Movement",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/upcycling.webp"
+  },
+  {
+    "name": "Blue and White Porcelain",
+    "x": -0.0189,
+    "y": -0.0257,
+    "category": "Texture",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/blue_white_porcelain.webp"
+  },
+  {
+    "name": "Cotton Candy",
+    "x": 0.2054,
+    "y": 0.0996,
+    "category": "Texture",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/cotton_candy.webp"
+  },
+  {
+    "name": "Embroidery",
+    "x": 0.2584,
+    "y": -0.1422,
+    "category": "Texture",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/embroidery.webp"
+  },
+  {
+    "name": "Beads",
+    "x": 0.2881,
+    "y": -0.0599,
+    "category": "Texture",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/beads.webp"
+  },
+  {
+    "name": "Wooly",
+    "x": 0.161,
+    "y": -0.1712,
+    "category": "Texture",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/wooly.webp"
+  },
+  {
+    "name": "Lego",
+    "x": 0.0434,
+    "y": -0.059,
+    "category": "Texture",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/lego.webp"
+  },
+  {
+    "name": "Colorful Toy",
+    "x": 0.1088,
+    "y": 0.0309,
+    "category": "Light & Color",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/colorful_toy.webp"
+  },
+  {
+    "name": "Knitted",
+    "x": 0.216,
+    "y": -0.1233,
+    "category": "Texture",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/knitted.webp"
+  },
+  {
+    "name": "Play-doh",
+    "x": 0.1852,
+    "y": 0.0244,
+    "category": "Texture",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/play_doh.webp"
+  },
+  {
+    "name": "Chocolate",
+    "x": 0.2302,
+    "y": -0.059,
+    "category": "Texture",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/chocolate.webp"
+  },
+  {
+    "name": "Fluffy",
+    "x": 0.2274,
+    "y": -0.0377,
+    "category": "Texture",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/fluffy.webp"
+  },
+  {
+    "name": "Plush",
+    "x": 0.1527,
+    "y": -0.1187,
+    "category": "Texture",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/plush.webp"
+  },
+  {
+    "name": "Pearls",
+    "x": 0.2063,
+    "y": 0.005,
+    "category": "Texture",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/pearls.webp"
+  },
+  {
+    "name": "Ginger Bread",
+    "x": 0.2168,
+    "y": -0.0668,
+    "category": "Texture",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/ginger_bread.webp"
+  },
+  {
+    "name": "Vaporwave",
+    "x": -0.1116,
+    "y": 0.1526,
+    "category": "Mood",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/vaporwave.webp"
+  },
+  {
+    "name": "Brutalist",
+    "x": -0.3354,
+    "y": -0.1032,
+    "category": "Architecture",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/brutalist.webp"
+  },
+  {
+    "name": "Rustic",
+    "x": 0.0583,
+    "y": -0.3927,
+    "category": "Movement",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/rustic.webp"
+  },
+  {
+    "name": "Moroccan",
+    "x": 0.0317,
+    "y": 0.0116,
+    "category": "Texture",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/moroccan.webp"
+  },
+  {
+    "name": "Traditional Chinese",
+    "x": 0.0296,
+    "y": -0.0063,
+    "category": "Texture",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/traditional_chinese.webp"
+  },
+  {
+    "name": "Streetwear",
+    "x": -0.0012,
+    "y": -0.0242,
+    "category": "Movement",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/streetwear.webp"
+  },
+  {
+    "name": "Vintage",
+    "x": 0.0048,
+    "y": -0.2843,
+    "category": "Movement",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/vintage.webp"
+  },
+  {
+    "name": "Bohemian",
+    "x": 0.0359,
+    "y": -0.2803,
+    "category": "Movement",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/bohemian.webp"
+  },
+  {
+    "name": "Minimal",
+    "x": -0.1823,
+    "y": -0.1546,
+    "category": "Architecture",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/minimal.webp"
+  },
+  {
+    "name": "Rococo",
+    "x": 0.0622,
+    "y": -0.1446,
+    "category": "Movement",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/rococo.webp"
+  },
+  {
+    "name": "3D Retro",
+    "x": -0.0226,
+    "y": -0.2504,
+    "category": "Architecture",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/retro_3d_v2.webp"
+  },
+  {
+    "name": "Avant-garde",
+    "x": -0.0324,
+    "y": -0.2462,
+    "category": "Movement",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/avant_garde.webp"
+  },
+  {
+    "name": "Graffiti",
+    "x": -0.0371,
+    "y": -0.2322,
+    "category": "Mood",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/graffiti.webp"
+  },
+  {
+    "name": "Art Deco",
+    "x": -0.0712,
+    "y": -0.0902,
+    "category": "Movement",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/art_deco.webp"
+  },
+  {
+    "name": "Posh",
+    "x": -0.0587,
+    "y": -0.2236,
+    "category": "Movement",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/posh.webp"
+  },
+  {
+    "name": "Art Nouveau",
+    "x": 0.0175,
+    "y": -0.1174,
+    "category": "Movement",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/art_nouveau.webp"
+  },
+  {
+    "name": "Y2K",
+    "x": -0.0946,
+    "y": -0.1938,
+    "category": "Mood",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/y2k.webp"
+  },
+  {
+    "name": "Zen",
+    "x": -0.0884,
+    "y": -0.2033,
+    "category": "Architecture",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/zen.webp"
+  },
+  {
+    "name": "Steampunk",
+    "x": -0.0132,
+    "y": -0.1994,
+    "category": "Movement",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/steampunk.webp"
+  },
+  {
+    "name": "Felipe Pantone",
+    "x": -0.0133,
+    "y": -0.0532,
+    "category": "Movement",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/felipe_pantone.webp"
+  },
+  {
+    "name": "Opalescent",
+    "x": 0.0865,
+    "y": 0.3969,
+    "category": "Light & Color",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/opalescent.webp"
+  },
+  {
+    "name": "Glitter",
+    "x": 0.2663,
+    "y": 0.1681,
+    "category": "Light & Color",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/glitter.webp"
+  },
+  {
+    "name": "Bioluminescent",
+    "x": 0.0009,
+    "y": 0.2968,
+    "category": "Light & Color",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/bioluminescent.webp"
+  },
+  {
+    "name": "Geode",
+    "x": 0.1477,
+    "y": 0.0925,
+    "category": "Texture",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/geode.webp"
+  },
+  {
+    "name": "Glossy",
+    "x": 0.0059,
+    "y": 0.1926,
+    "category": "Material",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/glossy.webp"
+  },
+  {
+    "name": "Stained Glass",
+    "x": 0.1695,
+    "y": 0.1505,
+    "category": "Light & Color",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/stained_glass.webp"
+  },
+  {
+    "name": "Frosted Glass",
+    "x": 0.1019,
+    "y": 0.315,
+    "category": "Material",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/frosted_glass.webp"
+  },
+  {
+    "name": "Mirror",
+    "x": 0.0726,
+    "y": 0.137,
+    "category": "Material",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/mirror.webp"
+  },
+  {
+    "name": "Crystals",
+    "x": 0.1895,
+    "y": 0.2124,
+    "category": "Light & Color",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/crystals.webp"
+  },
+  {
+    "name": "Cinematic",
+    "x": 0.1668,
+    "y": 0.2749,
+    "category": "Mood",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/cinematic.webp"
+  },
+  {
+    "name": "Glitch",
+    "x": 0.0995,
+    "y": 0.2845,
+    "category": "Mood",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/glitch.webp"
+  },
+  {
+    "name": "Modern LED Lights",
+    "x": 0.0924,
+    "y": 0.2801,
+    "category": "Light & Color",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/modern_led_lights.webp"
+  },
+  {
+    "name": "Hologram",
+    "x": 0.1524,
+    "y": 0.2619,
+    "category": "Light & Color",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/hologram.webp"
+  },
+  {
+    "name": "Monochrome",
+    "x": 0.1571,
+    "y": 0.2406,
+    "category": "Light & Color",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/monochrome.webp"
+  },
+  {
+    "name": "Glow",
+    "x": 0.0984,
+    "y": 0.2715,
+    "category": "Light & Color",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/glow.webp"
+  },
+  {
+    "name": "Hard Shadows",
+    "x": 0.1179,
+    "y": 0.2703,
+    "category": "Light & Color",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/hard_shadows.webp"
+  },
+  {
+    "name": "Icy",
+    "x": 0.0694,
+    "y": 0.219,
+    "category": "Light & Color",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/icy.webp"
+  },
+  {
+    "name": "Cyberpunk",
+    "x": -0.2948,
+    "y": 0.1154,
+    "category": "Mood",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/cyberpunk.webp"
+  },
+  {
+    "name": "Ethereal",
+    "x": -0.0824,
+    "y": 0.1792,
+    "category": "Mood",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/ethereal.webp"
+  },
+  {
+    "name": "Coal",
+    "x": 0.113,
+    "y": -0.1448,
+    "category": "Mood",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/coal.webp"
+  },
+  {
+    "name": "Neoliteratism",
+    "x": -0.0202,
+    "y": -0.1957,
+    "category": "Movement",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/neoliteratism.webp"
+  },
+  {
+    "name": "Smoke",
+    "x": 0.0896,
+    "y": -0.0484,
+    "category": "Mood",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/smoke.webp"
+  },
+  {
+    "name": "Lava",
+    "x": 0.0809,
+    "y": -0.0354,
+    "category": "Mood",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/lava.webp"
+  },
+  {
+    "name": "Sci-fi",
+    "x": 0.0096,
+    "y": 0.0314,
+    "category": "Mood",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/sci_fi.webp"
+  },
+  {
+    "name": "LiquidBlack",
+    "x": -0.0551,
+    "y": -0.0146,
+    "category": "Mood",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/liquid_black.webp"
+  },
+  {
+    "name": "Dark Fantasy",
+    "x": -0.0391,
+    "y": -0.0316,
+    "category": "Mood",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/dark_fantasy.webp"
+  },
+  {
+    "name": "Cyborg",
+    "x": 0.0022,
+    "y": -0.0247,
+    "category": "Mood",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/cyborg.webp"
+  },
+  {
+    "name": "Armor",
+    "x": -0.0198,
+    "y": -0.0346,
+    "category": "Mood",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/armor_v2.webp"
+  },
+  {
+    "name": "Symmetric",
+    "x": 0.0635,
+    "y": -0.0337,
+    "category": "Architecture",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/symmetric.webp"
+  },
+  {
+    "name": "Industrial",
+    "x": -0.2236,
+    "y": -0.2516,
+    "category": "Architecture",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/industrial.webp"
+  },
+  {
+    "name": "Taihu",
+    "x": 0.0216,
+    "y": 0.0074,
+    "category": "Texture",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/taihu.webp"
+  },
+  {
+    "name": "Hi-Tech",
+    "x": -0.4441,
+    "y": 0.0627,
+    "category": "Architecture",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/hi_tech.webp"
+  },
+  {
+    "name": "Norman Foster",
+    "x": -0.433,
+    "y": 0.0928,
+    "category": "Architecture",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/norman_foster.webp"
+  },
+  {
+    "name": "Space Age",
+    "x": -0.334,
+    "y": 0.1824,
+    "category": "Mood",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/space_age.webp"
+  },
+  {
+    "name": "Zaha Hadid",
+    "x": -0.3278,
+    "y": 0.1546,
+    "category": "Architecture",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/zaha_hadid.webp"
+  },
+  {
+    "name": "Vincent Callebaut",
+    "x": -0.1665,
+    "y": 0.0764,
+    "category": "Architecture",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/vincent_callebaut.webp"
+  },
+  {
+    "name": "Antoni Gaudi",
+    "x": -0.1801,
+    "y": -0.0345,
+    "category": "Architecture",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/antoni_gaudi_v2.webp"
+  },
+  {
+    "name": "Bjarke Ingels",
+    "x": -0.387,
+    "y": 0.0652,
+    "category": "Architecture",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/bjarke_ingels.webp"
+  },
+  {
+    "name": "Organic",
+    "x": -0.3737,
+    "y": 0.0299,
+    "category": "Architecture",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/organic.webp"
+  },
+  {
+    "name": "Isometric",
+    "x": -0.3567,
+    "y": 0.0649,
+    "category": "Mood",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/isometric.webp"
+  },
+  {
+    "name": "Francesco Borromini",
+    "x": -0.3463,
+    "y": 0.0598,
+    "category": "Architecture",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/francesco_borromini.webp"
+  },
+  {
+    "name": "Victor Horta",
+    "x": -0.333,
+    "y": 0.0559,
+    "category": "Architecture",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/victor_horta.webp"
+  },
+  {
+    "name": "Michael Graves",
+    "x": -0.3301,
+    "y": 0.0237,
+    "category": "Architecture",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/michael_graves.webp"
+  },
+  {
+    "name": "Modern Minimal",
+    "x": -0.2968,
+    "y": 0.0604,
+    "category": "Architecture",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/modern_minimal.webp"
+  },
+  {
+    "name": "Mecha",
+    "x": -0.2705,
+    "y": 0.0217,
+    "category": "Mood",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/mecha.webp"
+  },
+  {
+    "name": "Techwear",
+    "x": -0.2873,
+    "y": 0.0215,
+    "category": "Movement",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/techwear.webp"
+  },
+  {
+    "name": "Neon",
+    "x": 0.0932,
+    "y": 0.2011,
+    "category": "Light & Color",
+    "preview": "https://mkupvyzvfntqiastdtai.supabase.co/storage/v1/object/public/upscaled-images/gene-previews/neon.webp"
+  }
+]
